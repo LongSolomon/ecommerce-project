@@ -22,6 +22,7 @@ const productSchema = mongoose.Schema(
     brand: { type: String, required: true },
     quantity: { type: Number, required: true },
     category: { type: ObjectId, ref: "Category", required: true },
+    attributes: { type: String, required: false },
     description: { type: String, required: true },
     code: { type: String, required: true },
     reviews: [reviewSchema],

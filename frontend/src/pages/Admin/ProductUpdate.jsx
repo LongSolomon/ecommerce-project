@@ -16,6 +16,7 @@ const ProductUpdate = () => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
+  const [attribute, setAttribute] = useState("");
   const [brand, setBrand] = useState("");
   const [category, setCategory] = useState("");
   const [countInStock, setCountInStock] = useState("");
@@ -173,6 +174,19 @@ const ProductUpdate = () => {
                     required
                   />
                 </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Attribute
+                </label>
+                <input
+                  type="text"
+                  value={attribute}
+                  onChange={(e) => setAttribute(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  required
+                />
               </div>
 
               <div>

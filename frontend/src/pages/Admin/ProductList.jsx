@@ -16,6 +16,7 @@ const ProductList = () => {
   const [price, setPrice] = useState(0);
   const [category, setCategory] = useState("");
   const [quantity, setQuantity] = useState(1);
+  const [attribute, setAttribute] = useState("");
   const [brand, setBrand] = useState("");
   const [stock, setStock] = useState(1);
   const [imageUrl, setImageUrl] = useState(null);
@@ -51,6 +52,7 @@ const ProductList = () => {
       productData.append("price", price);
       productData.append("category", category);
       productData.append("quantity", quantity);
+      productData.append("attributes", attribute);
       productData.append("brand", brand);
       productData.append("countInStock", stock);
       productData.append("code", code);
@@ -210,6 +212,19 @@ const ProductList = () => {
                 </div> */}
               </div>
 
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Attributes
+                </label>
+                <input
+                  type="text"
+                  value={attribute}
+                  onChange={(e) => setAttribute(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Enter product attributes"
+                  required
+                />
+              </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Brand
