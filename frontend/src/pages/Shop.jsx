@@ -77,9 +77,11 @@ const Shop = () => {
   };
 
   const handleCheck = (value, id) => {
-    const updatedChecked = value
-      ? [...checked, id]
-      : checked.filter((c) => c !== id);
+    // const updatedChecked = value
+    //   ? [...checked, id]
+    //   : checked.filter((c) => c !== id);
+    // dispatch(setChecked(updatedChecked));
+    const updatedChecked = value ? [id] : checked.filter((c) => c !== id);
     dispatch(setChecked(updatedChecked));
   };
 
@@ -140,33 +142,37 @@ const Shop = () => {
             ))}
           </div>
 
-          <h2 className="h4 text-start ml-2 py-1 bg-white rounded-full font-bold">
-            Attributes
-          </h2>
-          <div className="mt-2 mb-5 ml-2 flex flex-wrap gap-1">
-            {allAttributes?.map((attribute) => (
-              <div key={attribute} className="mb-2">
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id={attribute}
-                    name="attribute"
-                    onChange={(e) => handleAttributeCheck(e.target.checked, attribute)}
-                    className="hidden"
-                  />
-                  <label
-                    htmlFor={attribute}
-                    className={`text-sm cursor-pointer font-medium border-2 px-3 py-1 rounded-lg transition-colors duration-300 ${selectedAttributes.current.includes(attribute)
-                      ? "bg-teal-600 text-white border-teal-300"
-                      : "text-teal-600 border-teal-600"
-                      }`}
-                  >
-                    {attribute}
-                  </label>
-                </div>
+          {checked.length > 0 &&
+            <>
+              <h2 className="h4 text-start ml-2 py-1 bg-white rounded-full font-bold">
+                Attributes
+              </h2>
+              <div className="mt-2 mb-5 ml-2 flex flex-wrap gap-1">
+                {allAttributes?.map((attribute) => (
+                  <div key={attribute} className="mb-2">
+                    <div className="flex items-center">
+                      <input
+                        type="checkbox"
+                        id={attribute}
+                        name="attribute"
+                        onChange={(e) => handleAttributeCheck(e.target.checked, attribute)}
+                        className="hidden"
+                      />
+                      <label
+                        htmlFor={attribute}
+                        className={`text-sm cursor-pointer font-medium border-2 px-3 py-1 rounded-lg transition-colors duration-300 ${selectedAttributes.current.includes(attribute)
+                          ? "bg-teal-600 text-white border-teal-300"
+                          : "text-teal-600 border-teal-600"
+                          }`}
+                      >
+                        {attribute}
+                      </label>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </>
+          }
 
           <h2 className="h4 text-start ml-2 py-1 bg-white rounded-full font-bold">
             Brands

@@ -36,6 +36,7 @@ const ProductUpdate = () => {
       setPrice(product.price);
       setImage(product.image);
       setImageUrl(product.image);
+      setAttribute(product.attributes);
       setBrand(product.brand);
       setCategory(product.category);
       setCountInStock(product.countInStock);
@@ -64,6 +65,7 @@ const ProductUpdate = () => {
         name,
         price,
         image,
+        attribute,
         brand,
         category,
         countInStock,
