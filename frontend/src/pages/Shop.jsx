@@ -23,7 +23,7 @@ const Shop = () => {
     checked,
     radio,
   });
-
+  const selectedAttributes = useRef([]);
   const selectedBrands = useRef([]);
 
   useEffect(() => {
@@ -59,6 +59,14 @@ const Shop = () => {
   //   dispatch(setProducts(productsByBrand));
   // };
 
+  const handleAttributeCheck = (value, attribute) => {
+    selectedAttributes.current = value ? [...selectedAttributes.current, attribute] : selectedAttributes.current.filter((a) => a !== attribute);
+    const productsByAttribute = JSON.stringify(selectedAttributes.current) != JSON.stringify([]) ? filteredProductsQuery.data?.filter(
+      (product) => selectedAttributes.current.includes(product.attributes)
+    ) : filteredProductsQuery.data;
+    dispatch(setProducts(productsByAttribute));
+  };
+
   const handleBrandCheck = (value, brand) => {
     selectedBrands.current = value ? [...selectedBrands.current, brand] : selectedBrands.current.filter((b) => b !== brand);
     const productsByBrand = JSON.stringify(selectedBrands.current) != JSON.stringify([]) ? filteredProductsQuery.data?.filter(
@@ -81,6 +89,15 @@ const Shop = () => {
         filteredProductsQuery.data
           ?.map((product) => product.brand)
           .filter((brand) => brand !== undefined)
+      )
+    ),
+  ];
+  const allAttributes = [
+    ...Array.from(
+      new Set(
+        filteredProductsQuery.data
+          ?.map((product) => product.attributes)
+          .filter((attr) => attr !== undefined)
       )
     ),
   ];
@@ -117,6 +134,34 @@ const Shop = () => {
                       }`}
                   >
                     {c.name}
+                  </label>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="h4 text-start ml-2 py-1 bg-white rounded-full font-bold">
+            Attributes
+          </h2>
+          <div className="mt-2 mb-5 ml-2 flex flex-wrap gap-1">
+            {allAttributes?.map((attribute) => (
+              <div key={attribute} className="mb-2">
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id={attribute}
+                    name="attribute"
+                    onChange={(e) => handleAttributeCheck(e.target.checked, attribute)}
+                    className="hidden"
+                  />
+                  <label
+                    htmlFor={attribute}
+                    className={`text-sm cursor-pointer font-medium border-2 px-3 py-1 rounded-lg transition-colors duration-300 ${selectedAttributes.current.includes(attribute)
+                      ? "bg-teal-600 text-white border-teal-300"
+                      : "text-teal-600 border-teal-600"
+                      }`}
+                  >
+                    {attribute}
                   </label>
                 </div>
               </div>
