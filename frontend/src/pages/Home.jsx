@@ -7,8 +7,8 @@ import Product from "./Products/Product";
 import { FaSearch } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import { PiCircleThin } from "react-icons/pi";
-import globe from "../assets/globe.svg";
-import advantage from "../assets/advantage.svg";
+import globe from '../assets/badminton-1428046_1280.jpg';
+import advantage from '../assets/1-26.jpeg';
 import ProductCard from "./Products/ProductCard";
 
 const Home = () => {
@@ -30,13 +30,13 @@ const Home = () => {
             <div className="flex flex-col md:flex-row justify-between items-center gap-10">
               <div className="md:w-1/2">
                 <h1 className="text-white text-4xl md:text-6xl font-bold mb-4">
-                  The marketplace for coders building the world
+                  The best badminton equipment shop
                 </h1>
 
                 <img src={globe} alt="Globe" className="rounded-md mb-6" />
                 <div className="flex items-center space-x-2 mb-4">
                   <span className="px-3 py-1 bg-[#1F364D] text-white rounded-full text-sm">
-                    🎉 It's a new era!
+                    🎉 It's a badminton era!
                   </span>
                 </div>
 
@@ -44,21 +44,21 @@ const Home = () => {
                   <p className="text-white text-3xl mb-4">
                     Over
                     <span className="inline-block bg-white text-black font-bold text-3xl px-2 py-1 mx-1 rounded">
-                      1
+                      5
                     </span>
                     <span className="inline-block bg-white text-black font-bold text-3xl px-2 py-1 mx-1 rounded">
-                      2
+                      5
                     </span>
                     <span className="inline-block bg-white text-black font-bold text-3xl px-2 py-1 mx-1 rounded">
                       3
                     </span>
                     <span className="inline-block bg-white text-black font-bold text-3xl px-2 py-1 mx-1 rounded">
-                      4
+                      6
                     </span>
                     <span className="inline-block bg-white text-black font-bold text-3xl px-2 py-1 mx-1 rounded">
-                      5
+                      9
                     </span>
-                    indie developers are flying with our services.
+                    existing badminton products
                   </p>
 
                   <div className="flex items-center space-x-4">
@@ -66,172 +66,17 @@ const Home = () => {
                       href="#"
                       className="bg-gradient-to-r from-[#E052A0] to-[#F15C41] hover:from-[#F15C41] hover:to-[#E052A0] text-white font-bold py-2 px-6 rounded-full"
                     >
-                      Start Your Own
+                      Start Shopping
                     </a>
                     <a href="#" className="text-white text-lg">
-                      or learn more below ⬇️
+                      or reading more below ⬇️
                     </a>
                   </div>
                 </div>
               </div>
               <div className="md:w-1/2 flex flex-col space-y-6">
-                <div className="bg-gray-800 py-4  px-24 rounded-2xl">
-                  <div className="flex space-x-4 bg-gray-800 rounded-t-lg py-2 px-4">
-                    <span className="bg-gray-700 text-white px-3 py-1 rounded">
-                      index.html
-                    </span>
-                    <span className="text-gray-400 px-3 py-1">script.js</span>
-                    <span className="text-gray-400 px-3 py-1">
-                      package.json
-                    </span>
-                  </div>
-                  <pre className="text-sm text-gray-300">
-                    <code>
-                      <span className="text-green-400">&lt;div</span>{" "}
-                      <span className="text-purple-400">class=</span>
-                      <span className="text-blue-400">
-                        "position-absolute width-full color-bg-default"
-                      </span>
-                      <span className="text-green-400">&gt;</span>
-                      <br />
-                      <span className="text-gray-500">2</span>{" "}
-                      <span className="text-green-400">&lt;div</span>{" "}
-                      <span className="text-purple-400">class=</span>
-                      <span className="text-blue-400">
-                        "container-xl p-responsive"
-                      </span>
-                      <span className="text-green-400">&gt;</span>
-                      <br />
-                      <span className="text-gray-500">3</span>{" "}
-                      <span className="text-green-400">&lt;div</span>{" "}
-                      <span className="text-purple-400">class=</span>
-                      <span className="text-blue-400">
-                        "d-flex flex-justify-center flex-lg-justify-end"
-                      </span>
-                      <span className="text-green-400">&gt;</span>
-                      <br />
-                      <span className="text-gray-500">4</span>{" "}
-                      <span className="text-green-400">&lt;div</span>{" "}
-                      <span className="text-purple-400">class=</span>
-                      <span className="text-blue-400">
-                        "col-8 col-sm-7 col-md-6 col-lg-5 position-relative"
-                      </span>
-                      <span className="text-green-400">&gt;</span>
-                      <br />
-                      <span className="text-gray-500">5</span>{" "}
-                      &nbsp;&lt;picture&gt;
-                      <br />
-                      <span className="text-gray-500">6</span> &nbsp;&nbsp;&lt;
-                      <span className="text-green-400">source</span>{" "}
-                      <span className="text-purple-400">srcset=</span>
-                      <span className="text-blue-400">
-                        "astro-mona.webp"
-                      </span>{" "}
-                      <span className="text-purple-400">type=</span>
-                      <span className="text-blue-400">"image/webp"</span>&gt;
-                      <br />
-                      <span className="text-gray-500">7</span> &nbsp;&nbsp;&lt;
-                      <span className="text-green-400">img</span>{" "}
-                      <span className="text-purple-400">src=</span>
-                      <span className="text-blue-400">
-                        "astro-mona.svg"
-                      </span>{" "}
-                      <span className="text-purple-400">width=</span>
-                      <span className="text-blue-400">"960"</span>{" "}
-                      <span className="text-purple-400">height=</span>
-                      <span className="text-blue-400">"960"</span>&gt;
-                      <br />
-                      <span className="text-gray-500">8</span>{" "}
-                      &nbsp;&lt;/picture&gt;
-                      <br />
-                      <span className="text-gray-500">9</span> &lt;/div&gt;
-                      <br />
-                      <span className="text-gray-500">10</span> &lt;/div&gt;
-                      <br />
-                      <span className="text-gray-500">11</span> &lt;/div&gt;
-                    </code>
-                  </pre>
-                </div>
-
-                <div className="bg-black mt-6 p-4 rounded-lg">
-                  <div className="text-gray-500 flex space-x-4 text-sm mb-2">
-                    <span>Terminal</span>
-                    <span>Output</span>
-                    <span>Problems</span>
-                    <span>Debug Console</span>
-                  </div>
-                  <div className="h-40 overflow-y-auto text-xs text-gray-300">
-                    <pre>
-                      <span className="text-gray-500">[09:43:36]</span> Starting{" "}
-                      <span className="text-white">
-                        'watch-extension:vscode-api-tests'
-                      </span>
-                      ...
-                      <br />
-                      <span className="text-gray-500">
-                        [09:43:36]
-                      </span> Finished{" "}
-                      <span className="text-white">
-                        'clean-extension:typescript-language-features'
-                      </span>{" "}
-                      after <span className="text-blue-400">384 ms</span>
-                      <br />
-                      <span className="text-gray-500">
-                        [09:43:36]
-                      </span> Starting{" "}
-                      <span className="text-white">
-                        'watch-extension:typescript-language-features'
-                      </span>
-                      ...
-                      <br />
-                      <span className="text-gray-500">
-                        [09:43:36]
-                      </span> Finished{" "}
-                      <span className="text-white">
-                        'clean-extension:php-language-features'
-                      </span>{" "}
-                      after <span className="text-blue-400">384 ms</span>
-                      <br />
-                      <span className="text-gray-500">
-                        [09:43:36]
-                      </span> Starting{" "}
-                      <span className="text-white">
-                        'watch-extension:php-language-features'
-                      </span>
-                      ...
-                      <br />
-                      <span className="text-gray-500">
-                        [09:43:40]
-                      </span> Finished{" "}
-                      <span className="text-white">
-                        'clean-extension:html-language-features-server'
-                      </span>{" "}
-                      after <span className="text-blue-400">400 ms</span>
-                      <br />
-                      <span className="text-gray-500">
-                        [09:43:40]
-                      </span> Starting{" "}
-                      <span className="text-white">
-                        'watch-extension:html-language-features-server'
-                      </span>
-                      ...
-                      <br />
-                      <span className="text-gray-500">
-                        [09:43:43]
-                      </span> Finished{" "}
-                      <span className="text-white">'clean-client'</span> after{" "}
-                      <span className="text-yellow-400">7.33 s</span>
-                      <br />
-                      <span className="text-gray-500">
-                        [09:43:43]
-                      </span> Starting{" "}
-                      <span className="text-white">'watch-client'</span>...
-                    </pre>
-                  </div>
-                </div>
-
                 <h2 className="text-white text-4xl font-semibold font-thin">
-                  The platform where developers can trade their products
+                  1B, a place to satisfy your passion
                 </h2>
 
                 <div className="relative flex space-x-4">
@@ -248,29 +93,10 @@ const Home = () => {
             <div className="flex flex-col lg:flex-row justify-between gap-8">
               <div className="lg:w-1/2">
                 <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                  What makes Codify special?
+                  What makes 1B special?
                 </h2>
                 <p className="text-gray-700 mb-4 text-xl text-justify">
-                  <strong className="font-semibold ">Codify</strong> simplifies
-                  the process of sharing and monetizing code, enabling
-                  developers to showcase their work and offer high-quality
-                  solutions that can be easily integrated into various projects.
-                  By offering a dedicated space for these transactions, Codify
-                  empowers both experienced and novice developers to access
-                  ready-made solutions that can save time and effort in
-                  development.
-                </p>
-                <p className="text-gray-700 text-xl text-justify">
-                  Additionally, Codify fosters a vibrant community of creators
-                  and buyers, encouraging collaboration and innovation.
-                  Developers can not only sell their products but also receive
-                  feedback, improve their offerings, and explore potential
-                  partnerships. For buyers, it’s a go-to platform to discover
-                  reliable and proven code, whether they are looking to speed up
-                  a project or implement specific functionalities. Codify’s
-                  clear, user-friendly interface and its commitment to
-                  high-quality listings make it a standout platform for both
-                  developers and businesses alike.
+                  <strong className="font-semibold ">1B</strong>1B is your ultimate destination for premium badminton gear, tailored to elevate every player’s game. Our expert staff helps you find the perfect equipment, while our “try-before-you-buy” feature ensures you get the right feel for your play style. With quality gear, in-depth guidance, and a community-driven spirit, 1B empowers players to step onto the court with confidence, style, and performance in every shot.
                 </p>
               </div>
               <div className="bg-yellow-100 rounded-lg p-4 lg:w-2/5 h-fit">
@@ -280,17 +106,17 @@ const Home = () => {
                 <ul className="list-none pl-4 space-y-2">
                   <li>
                     <a href="#" className="text-blue-600 hover:underline">
-                      Our Scrum Master tells our origin story.
+                      Top 10 badminton rackets for newbies.
                     </a>
                   </li>
                   <li>
                     <a href="#" className="text-blue-600 hover:underline">
-                      New features in version 4.
+                      The most durable badminton string.
                     </a>
                   </li>
                   <li>
                     <a href="#" className="text-blue-600 hover:underline">
-                      Browse the components gallery.
+                      Super sale 11/11 at 1B.
                     </a>
                   </li>
                   <li>
@@ -311,7 +137,7 @@ const Home = () => {
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-8">
               <div className="lg:w-2/3">
                 <h1 className="text-4xl lg:text-6xl font-bold leading-snug">
-                  Find a component, or a full website as you discover
+                  Search for products that suit your needs
                 </h1>
 
                 <div className="relative mt-6 max-w-md">

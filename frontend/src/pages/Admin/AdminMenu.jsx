@@ -111,7 +111,7 @@ const AdminMenu = () => {
                 <MdLibraryBooks className="mr-3 text-lg" /> Manage Orders
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink
                 className={({ isActive }) =>
                   `py-2 px-3 flex items-center rounded-xl text-base font-semibold ${isActive ? "bg-gray-200" : "hover:bg-gray-200"
@@ -124,7 +124,7 @@ const AdminMenu = () => {
               >
                 <AiFillSetting className="mr-3 text-lg" /> Settings
               </NavLink>
-            </li>
+            </li> */}
           </ul>
         </section>
       </div>

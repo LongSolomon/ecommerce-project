@@ -128,7 +128,7 @@ const ProductDetails = () => {
               <div className="flex items-center justify-between flex-col w-full">
                 <h2 className="flex items-center text-lg justify-between flex-row w-full border-t-2 p-2 border-black">
                   <div className="flex flex-row items-center gap-2 uppercase font-bold">
-                    <FaTag className="mr-2 text-black" /> Label{" "}
+                    <FaTag className="mr-2 text-black" /> Brand{" "}
                   </div>
                   <div className="font-bold text-sky-700 ">
                     {product.brand}
@@ -139,7 +139,7 @@ const ProductDetails = () => {
                   <div className="flex flex-row items-center gap-2 uppercase font-bold">
                     <FaInfoCircle className="mr-2 text-black" /> Description{" "}
                   </div>
-                  <div className="font-bold text-sky-700 ">
+                  <div className="font-bold text-sky-700 " style={{ paddingLeft: "10px" }}>
                     {product.description}
                   </div>
                 </h2>
@@ -213,12 +213,12 @@ const ProductDetails = () => {
                   >
                     Add To Cart
                   </button>
-                  <button
+                  {/* <button
                     onClick={previewCodeHandler}
                     className="bg-sky-600 text-white py-2 px-6 uppercase font-bold rounded-2xl flex items-center justify-center gap-2"
                   >
                     <FaCode /> Preview Code
-                  </button>
+                  </button> */}
                 </div>
                 <StarIcon product={product} />
               </div>

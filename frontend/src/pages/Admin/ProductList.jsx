@@ -153,7 +153,7 @@ const ProductList = () => {
                 <label className="border-2 border-dashed border-gray-300 rounded-lg p-8 flex flex-col items-center justify-center cursor-pointer hover:border-blue-500 transition-colors">
                   <FaCode className="text-4xl text-gray-400 mb-2" />
                   <span className="text-gray-600">
-                    {code ? code.name : "Upload Code (ZIP)"}
+                    {code ? code.name : "Upload File (ZIP)"}
                   </span>
                   <input
                     type="file"

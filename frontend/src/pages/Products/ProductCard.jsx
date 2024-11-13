@@ -28,7 +28,7 @@ const ProductCard = ({ p }) => {
             className="cursor-pointer w-full rounded-xl"
             src={p.image}
             alt={p.name}
-            style={{ objectPosition: '50% 0%', objectFit: 'cover', height: '170px' }}
+            style={{ objectPosition: '50% 0%', objectFit: 'cover', height: '200px' }}
 
           />
         </Link>
