@@ -99,9 +99,9 @@ const Shop = () => {
           <h2 className="py-2 bg-white rounded-full text-start ml-2 font-bold">
             Categories
           </h2>
-          <div className="w-60 mt-2 mb-5 flex flex-wrap">
+          <div className="w-60 mt-2 mb-5 flex flex-wrap gap-1">
             {categories?.map((c) => (
-              <div key={c._id} className="mb-2 w-full">
+              <div key={c._id} className="mb-2">
                 <div className="flex items-center">
                   <input
                     type="checkbox"
@@ -126,9 +126,9 @@ const Shop = () => {
           <h2 className="h4 text-start ml-2 py-1 bg-white rounded-full font-bold">
             Brands
           </h2>
-          <div className="mt-2 mb-5 ml-2">
+          <div className="mt-2 mb-5 ml-2 flex flex-wrap gap-1">
             {uniqueBrands?.map((brand) => (
-              <div key={brand} className="mb-2 w-full">
+              <div key={brand} className="mb-2">
                 <div className="flex items-center">
                   <input
                     type="checkbox"
