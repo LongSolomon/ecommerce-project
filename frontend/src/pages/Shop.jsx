@@ -17,7 +17,7 @@ const Shop = () => {
     (state) => state.shop
   );
   const categoriesQuery = useFetchCategoriesQuery();
-  const [priceFilter, setPriceFilter] = useState("");
+  const [priceFilter, setPriceFilter] = useState({ min: 0, max: 1000 });
 
   const filteredProductsQuery = useGetFilteredProductsQuery({
     checked,
@@ -27,7 +27,6 @@ const Shop = () => {
   const selectedBrands = useRef([]);
 
   useEffect(() => {
-    // console.log('categoriesQuery')
     if (!categoriesQuery.isLoading) {
       dispatch(setCategories(categoriesQuery.data));
     }
@@ -36,14 +35,12 @@ const Shop = () => {
   useEffect(() => {
     if (!checked.length || !radio.length) {
       if (!filteredProductsQuery.isLoading && filteredProductsQuery.data) {
-        // Filter products based on both checked categories and price filter
         const filteredProducts = filteredProductsQuery.data.filter(
           (product) => {
-            // Check if the product price includes the entered price filter value
-            return (
-              product.price.toString().includes(priceFilter) ||
-              product.price === parseInt(priceFilter, 10)
-            );
+            const price = product.price;
+            const minPrice = priceFilter.min ? parseInt(priceFilter.min, 10) : 0;
+            const maxPrice = priceFilter.max ? parseInt(priceFilter.max, 10) : Infinity;
+            return price >= minPrice && price <= maxPrice;
           }
         );
 
@@ -51,13 +48,6 @@ const Shop = () => {
       }
     }
   }, [checked, radio, filteredProductsQuery.data, dispatch, priceFilter]);
-
-  // const handleBrandClick = (brand) => {
-  //   const productsByBrand = filteredProductsQuery.data?.filter(
-  //     (product) => product.brand === brand
-  //   );
-  //   dispatch(setProducts(productsByBrand));
-  // };
 
   const handleAttributeCheck = (value, attribute) => {
     selectedAttributes.current = value ? [...selectedAttributes.current, attribute] : selectedAttributes.current.filter((a) => a !== attribute);
@@ -77,10 +67,6 @@ const Shop = () => {
   };
 
   const handleCheck = (value, id) => {
-    // const updatedChecked = value
-    //   ? [...checked, id]
-    //   : checked.filter((c) => c !== id);
-    // dispatch(setChecked(updatedChecked));
     const updatedChecked = value ? [id] : checked.filter((c) => c !== id);
     dispatch(setChecked(updatedChecked));
   };
@@ -105,12 +91,10 @@ const Shop = () => {
   ];
 
   const handlePriceChange = (e) => {
-    setPriceFilter(e.target.value);
+    const { name, value } = e.target;
+    setPriceFilter((prev) => ({ ...prev, [name]: value }));
   };
-  console.log('checked', checked)
-  console.log('radio', radio)
-  console.log('uniqueBrands', uniqueBrands)
-  console.log('selectedBrands', selectedBrands.current)
+
   return (
     <div className="ml-1">
       <div className="flex md:flex-row">
@@ -207,12 +191,25 @@ const Shop = () => {
           </h2>
 
           <div className="mt-2 mb-1 ml-2 w-[15rem]">
+            <label>Min Price: {priceFilter.min}</label>
             <input
-              type="text"
-              placeholder="Enter Price"
-              value={priceFilter}
+              type="range"
+              name="min"
+              min="0"
+              max="1000"
+              value={priceFilter.min}
               onChange={handlePriceChange}
-              className="w-full px-3 py-2 placeholder-gray-400 border-2 border-black/70 rounded-xl focus:outline-none"
+              className="w-full"
+            />
+            <label>Max Price: {priceFilter.max}</label>
+            <input
+              type="range"
+              name="max"
+              min="0"
+              max="1000"
+              value={priceFilter.max}
+              onChange={handlePriceChange}
+              className="w-full"
             />
           </div>
 
@@ -227,7 +224,6 @@ const Shop = () => {
         </div>
 
         <div className="p-3">
-          {/* <h2 className="h4 text-center mb-2 bg-gray-400">{products?.length} Products</h2> */}
           <div className="flex flex-wrap gap-3 justify-start items-center">
             {products.length === 0 ? (
               <Loader />
@@ -236,8 +232,6 @@ const Shop = () => {
                 <div className="p-3" key={p._id}>
                   <ProductCard p={p} />
                 </div>
-
-
               ))
             )}
           </div>
