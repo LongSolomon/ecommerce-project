@@ -5,6 +5,7 @@ import {
   AiOutlineLogin,
   AiOutlineShoppingCart,
   AiOutlineLogout,
+  AiOutlineTool
 } from "react-icons/ai";
 import { FaRegStar } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
@@ -100,6 +101,17 @@ const Navigation = () => {
             <FaRegStar className="ml-2 mr-2" size={20} />
             <span className="hidden nav-item-name">Favorites</span>
             <FavoritesCount />
+          </div>
+        </Link>
+
+        <Link to="/custom" className="flex relative">
+          <div
+            className={`flex justify-center items-center transition-transform transform hover:translate-x-2 ${
+              isActive("/custom") ? "text-sky-600" : ""
+            }`}
+          >
+            <AiOutlineTool className="ml-2 mr-2" size={26} />
+            <span className="hidden nav-item-name">Customize</span>
           </div>
         </Link>
       </div>
