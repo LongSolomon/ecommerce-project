@@ -80,7 +80,6 @@ const AllProducts = () => {
                 ))}
               </div>
             </div>
-            <div className="md:w-1/4 p-3 mt-2"></div>
           </div>
         </div>
       </div>

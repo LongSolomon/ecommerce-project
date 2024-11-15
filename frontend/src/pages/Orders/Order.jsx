@@ -97,6 +97,7 @@ const Order = () => {
   const deliverHandler = async () => {
     await deliverOrder(orderId);
     refetch();
+    window.location.reload();
   };
 
   const getFreeHandler = async () => {
@@ -135,8 +136,8 @@ const Order = () => {
                   <h2 className="text-xl font-bold">Order #{order._id.substring(0, 8)}</h2>
                 </div>
                 <div className={`px-4 py-2 rounded-full text-sm font-medium ${order.isPaid
-                    ? 'bg-green-100 text-green-800'
-                    : 'bg-red-100 text-red-800'
+                  ? 'bg-green-100 text-green-800'
+                  : 'bg-red-100 text-red-800'
                   }`}>
                   {order.isPaid ? (
                     <div className="flex items-center">
