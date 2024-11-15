@@ -12,7 +12,7 @@ import { FaUpload, FaImage, FaSave, FaTrash } from "react-icons/fa";
 
 const ProductUpdate = () => {
   const params = useParams();
-  const { id: productId } = params;
+  const { _id: productId } = params;
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
